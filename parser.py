@@ -32,7 +32,7 @@ flattened_reports = [flatten_json(report) for report in reports_data]
 csv_columns = set().union(*(d.keys() for d in flattened_reports))
 
 # Write the flattened 'report' data to a CSV file named 'report_output.csv'
-with open('LocationPPC_PPCXDetailWithFeppcx_PersonalV1_output.csv', 'w', newline='') as csvfile:
+with open('report_output.csv', 'w', newline='') as csvfile:
     writer = csv.DictWriter(csvfile, fieldnames=csv_columns)
     writer.writeheader()
     for row in flattened_reports:
