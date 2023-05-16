@@ -22,7 +22,7 @@ def flatten_json(json_obj, delimiter='_', prefix=''):
             flattened[f"{prefix}{k}"] = v
     return flattened
 
-# Extract only the 'report' key from the JSON data
+# Extract only the 'report' key from the JSON data. Can be changed to fit use case. In this case, the main object I needed is in reportResponses
 reports_data = [response['report'] for item in data for response in item['body']['reportResponses']]
 
 # Flatten the 'report' data
